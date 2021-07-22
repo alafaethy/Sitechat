@@ -1,0 +1,126 @@
+:root {
+  --input-error: red;
+  --button-disabled: #acacac;
+  --button-success: rgb(18, 151, 107);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.login {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.login__container {
+  min-height: 400px;
+  width: 300px;
+  background-color: #cfcfcf;
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__title {
+  margin-bottom: 32px;
+  color: #8a2be2;
+}
+
+.login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__input {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 8px;
+  border: unset;
+  outline: none;
+}
+
+.login__input-border {
+  width: 1px;
+  height: 100%;
+  margin-bottom: 16px;
+  background-color: #8a2be2;
+  transition: 0.3s ease-in-out;
+}
+
+.login__input-border::after {
+  content: "";
+  height: 1px;
+  width: 0;
+  margin-bottom: 16px;
+  background-color: #8a2be2;
+  transition: 0.3s ease-in-out;
+}
+
+.login__input:focus + .login__input-border::after {
+  width: 100%;
+}
+
+.login__input-border.erro {
+  background-color: var(--input-error);
+}
+
+.login__input-border.erro::after {
+  background-color: var(--input-error);
+}
+
+.login__submit {
+  height: 30px;
+  width: 60%;
+  outline: none;
+  background-size: 200%;
+  margin-top: 32px;
+  color: #8a2be2;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+
+  background-color: #fff;
+  border: 1px solid #fff;
+  transition: background-color 0.7s;
+}
+
+.login__submit:hover {
+  background-color: #8a2be2;
+  border: 1px solid #8a2be2;
+  color: #fff;
+}
+
+.login__submit:disabled {
+  background-color: var(--button-disabled);
+  cursor: not-allowed;
+}
+
+.login__submit.error {
+  background-color: var(--input-error);
+}
+
+.login__submit.success {
+  background-color: var(--button-success);
+}
+
+.login__reset {
+  font-size: 13px;
+  color: #000;
+  text-decoration: none;
+}
